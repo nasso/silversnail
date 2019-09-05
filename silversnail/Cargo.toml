@@ -6,11 +6,32 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
 glow = "0.3.0-alpha2"
+cfg-if = "0.1.9"
 log = "0.4.8"
 
 [dependencies.educe]
 version = "0.4.0"
 features = ["Default"]
 default-features = false
+
+[target.wasm32-unknown-unknown.dependencies]
+wasm-bindgen = "0.2.50"
+js-sys = "0.3.27"
+console_error_panic_hook = "0.1.6"
+console_log = { version = "0.1.2", optional = true }
+
+[target.wasm32-unknown-unknown.dependencies.web-sys]
+version = "0.3.27"
+features = [
+    "HtmlCanvasElement",
+    "WebGl2RenderingContext",
+    "console"
+]
+
+[target.wasm32-unknown-unknown.features]
+default = ["console_log"]

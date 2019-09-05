@@ -73,11 +73,13 @@ module.exports = {
     },
     plugins: [
         new WasmPackPlugin({
-            crateDirectory: path.resolve(__dirname, "crate"),
+            crateDirectory: path.resolve(__dirname, "..", "silversnail"),
 
-            watchDirectories: [
-                path.join(__dirname, "..", "silversnail", "src")
-            ],
+            outDir: "pkg",
+
+            // watchDirectories: [
+            //     path.join(__dirname, "..", "silversnail", "src")
+            // ],
 
             // don't output typescript files
             extraArgs: "--no-typescript",

@@ -1,8 +1,11 @@
 import "./index.scss";
 
+const WIDTH = 720;
+const HEIGHT = 480;
+
 async function startRendering(renderer) {
     function renderLoop() {
-        renderer.render();
+        renderer.render_frame(WIDTH, HEIGHT);
 
         requestAnimationFrame(renderLoop);
     }
@@ -11,14 +14,14 @@ async function startRendering(renderer) {
 }
 
 async function main() {
-    const silversnail = await import("../crate/pkg");
+    const silversnail = await import("../../silversnail/pkg");
 
     // const project = new silversnail.Project();
 
     const renderer = new silversnail.Renderer({
         canvas: document.querySelector("#cvs"),
-        width: 720,
-        height: 480,
+        width: WIDTH,
+        height: HEIGHT,
     });
 
     startRendering(renderer);
