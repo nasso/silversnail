@@ -1,0 +1,16 @@
+[package]
+name = "silversnail"
+version = "0.1.0"
+authors = ["nasso <nassomails@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+glow = "0.3.0-alpha2"
+log = "0.4.8"
+
+[dependencies.educe]
+version = "0.4.0"
+features = ["Default"]
+default-features = false

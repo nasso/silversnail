@@ -1,0 +1,17 @@
+body {
+    background: black;
+    color: white;
+
+    text-align: center;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    display: inline-block;
+
+    #cvs {
+        border: 1px dashed gray;
+    }
+}
