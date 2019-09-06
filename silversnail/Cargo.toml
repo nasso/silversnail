@@ -3,11 +3,14 @@ name = "silversnail"
 version = "0.1.0"
 authors = ["nasso <nassomails@gmail.com>"]
 edition = "2018"
+description = "An experimental renderer that can target WASM or native OpenGL 4.1"
+repository = "https://github.com/nasso/silversnail"
+license = "MIT OR Apache-2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 glow = "0.3.0-alpha2"
